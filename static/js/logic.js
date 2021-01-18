@@ -104,7 +104,6 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   L.geoJson(data, {
     	// We turn each feature into a circleMarker on the map.
     	pointToLayer: function(feature, latlng) {
-      		console.log(data);
       		return L.circleMarker(latlng);
         },
       // We set the style for each circleMarker using our styleInfo function.
@@ -158,7 +157,6 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
 
   // 3. Use d3.json to make a call to get our Tectonic Plate geoJSON data.
   d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function(data) {
-    console.log(data);
     //pass tectonic plate data to geoJSON layer
     L.geoJson(data, {
       style: styletectonic,
@@ -218,8 +216,18 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
 
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson")
 .then(function(data) { 
-  var tableData = data;
+  var tableData = data.features;
+  let num = [0,1,2,3,4,5,6,7,8,9]
 
- document.getElementById("jtable").textContent = JSON.stringify(tableData,undefined,2);
+  var printPre = [] ;
+  
+  num.forEach(function (i) {
+    printPre += tableData[i];
+  })
+
+
+  console.log(printPre);
+
+ document.getElementById("jtable").textContent = JSON.stringify(tableData[0],undefined,2);
 
 });

@@ -51,13 +51,13 @@ body {
   margin-right: 0px;
 }
 
-div h6 {
+#table-header {
   text-align: center;
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-h6 { 
+#table-header { 
   margin-bottom: 0px;
   border-bottom: 0px;
   border-top-left-radius: 3px;
@@ -74,4 +74,19 @@ h6 {
 nav {
   
   border-bottom: 2px solid #A4CBE5;
+}
+
+#note1 {
+  border-bottom: 3px solid #C8E7C8;
+  padding-bottom: 5px;
+}
+
+#para1 {
+  padding-top: 0px;
+  margin-top: 0px;
+
+}
+
+#note-box {
+  border: 2px solid #A4CBE5;
 }

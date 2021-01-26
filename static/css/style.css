@@ -90,3 +90,7 @@ nav {
 #note-box {
   border: 2px solid #A4CBE5;
 }
+
+a {
+  font-size: 18px;
+}

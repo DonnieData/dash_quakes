@@ -222,12 +222,12 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   var printPre = [] ;
   
   num.forEach(function (i) {
-    printPre += tableData[i];
+   printPre.push(tableData[i]);
   })
 
 
   console.log(printPre);
 
- document.getElementById("jtable").textContent = JSON.stringify(tableData[0],undefined,2);
+ document.getElementById("jtable").textContent = JSON.stringify(printPre,undefined,2);
 
 });
